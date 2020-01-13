@@ -11,8 +11,7 @@ import { routerNgProbeToken } from "@angular/router/src/router_module";
 import { RentalModule } from "./rental/rental.module";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/rentals", pathMatch: "full" },
-  { path: "temp", component: TempComponent }
+  { path: "", redirectTo: "/rentals", pathMatch: "full" }
 ];
 
 @NgModule({
