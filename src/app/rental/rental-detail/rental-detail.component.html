@@ -1,8 +1,10 @@
 <div *ngIf="rental" class="card bwm-card">
-  <img class="card-img-top" src="http://via.placeholder.com/350x250" alt="" />
+  <img class="card-img-top" src="{{ rental.image }}" alt="image" />
   <div class="card-block">
-    <h6 class="card-subtitle">Whole Apartment &#183; {{ rental.city }}</h6>
+    <h6 class="card-subtitle">
+      Whole {{ rental.category }} &#183; {{ rental.city | ucwords }}
+    </h6>
     <h4 class="card-title">{{ rental.description }}</h4>
-    <p class="card-text">Free Cancelation: ${{ rental.daylyRate }} per Night</p>
+    <p class="card-text">Free Cancelation: ${{ rental.dailyRate }} per Night</p>
   </div>
 </div>
