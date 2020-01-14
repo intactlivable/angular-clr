@@ -1,0 +1,10 @@
+get http://localhost:3001/api/v1/rentals
+
+###
+
+get http://localhost:3001/api/v1/rentals/5e1d7435d609ff1438e0d13b
+
+
+
+
+
