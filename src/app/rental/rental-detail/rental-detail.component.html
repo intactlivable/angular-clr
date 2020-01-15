@@ -1,5 +1,6 @@
 <div *ngIf="rental" class="card bwm-card">
   <img class="card-img-top" src="{{ rental.image }}" alt="image" />
+  <app-map [location]="rental.city + ', ' + rental.street"></app-map>
   <div class="card-block">
     <h6 class="card-subtitle">
       Whole {{ rental.category }} &#183; {{ rental.city | ucwords }}

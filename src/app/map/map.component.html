@@ -1,0 +1,4 @@
+<h3>{{ location }}</h3>
+<agm-map [latitude]="lat" [longitude]="lng" (mapReady)="mapReadyHandler()">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
