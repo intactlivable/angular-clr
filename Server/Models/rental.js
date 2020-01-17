@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const rentalSchema = new schema({
+const rentalSchema = new Schema({
   title: { type: String, require: true, max: [128, "too long, max is 128"] },
   city: { type: String, require: true, lowercase: true },
   street: { type: String, require: true },
@@ -13,7 +13,8 @@ const rentalSchema = new schema({
   shared: Boolean,
   description: { type: String, require: true },
   dailyRate: Number,
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now },
+  user: { type: Schema.Types.ObjectId, ref: "User" }
 });
 
 module.exports = mongoose.model("Rental", rentalSchema);
