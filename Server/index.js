@@ -4,7 +4,12 @@ const mongoose = require("mongoose");
 
 const FakeDb = require("./fake-data");
 
+const bodyParser = require("body-parser");
+
 const rentalRoutes = require("./Routes/rentals");
+const userRoutes = require("./Routes/users");
+
+const userController = require("./Controllers/user");
 
 mongoose
   .connect(
@@ -17,7 +22,10 @@ mongoose
 
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use("/api/v1/rentals", rentalRoutes);
+app.use("/api/v1/users", userRoutes);
 
 // app.get("/rentals", function(req, res) {
 //   res.json({ success: true });

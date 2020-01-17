@@ -4,6 +4,32 @@ get http://localhost:3001/api/v1/rentals
 
 get http://localhost:3001/api/v1/rentals/5e1d7435d609ff1438e0d13b
 
+###
+
+post http://localhost:3001/api/v1/users/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mathias2",
+    "email": "mathias2@test.com",
+    "password": "password2",
+    "passwordConfirmation": "password2"
+}
+
+###
+
+post http://localhost:3001/api/v1/users/auth HTTP/1.1
+content-type: application/json
+
+{
+    "email": "mathias2@test.com",
+    "password": "password2"
+}
+
+###
+
+get http://localhost:3001/api/v1/rentals/secret
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJtYXRoaWFzMkB0ZXN0LmNvbSIsInVzZXJuYW1lIjoibWF0aGlhczIiLCJpYXQiOjE1NzkyNjg2MDYsImV4cCI6MTU3OTI3NTgwNn0.iEaWcrzOEHgDbzJZ7yx8rs4QsuoWeO6H6Zamf6xHdRQ
 
 
 
