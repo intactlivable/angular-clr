@@ -8,11 +8,13 @@ const bodyParser = require("body-parser");
 
 const rentalRoutes = require("./Routes/rentals");
 const userRoutes = require("./Routes/users");
+const bookingsRoutes = require("./Routes/bookings");
 
-const userController = require("./Controllers/user");
+// const userController = require("./Controllers/user");
 
 mongoose
   .connect(
+    // "mongodb+srv://admin:Hallo123!@cluster0-vigi8.azure.mongodb.net/test?retryWrites=true&w=majority"
     "mongodb+srv://admin:Hallo123!@cluster0-vigi8.azure.mongodb.net/test?retryWrites=true&w=majority"
   )
   .then(() => {
@@ -24,6 +26,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use("/api/v1/bookings", bookingsRoutes);
 app.use("/api/v1/rentals", rentalRoutes);
 app.use("/api/v1/users", userRoutes);
 
